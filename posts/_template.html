@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✏️ EDIT: 글 제목 -->
+  <title>글 제목 — Qri Kim</title>
+  <meta name="description" content="글 요약 (1-2문장, SEO용)">
+
+  <!-- ✏️ EDIT: OG / SEO -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="글 제목">
+  <meta property="og:description" content="글 요약">
+  <meta property="og:url" content="https://qrikim.com/posts/YOUR-SLUG">
+  <meta property="og:site_name" content="Qri Kim">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:author" content="Qri Kim">
+  <meta property="article:published_time" content="YYYY-MM-DD">
+  <meta property="article:tag" content="TAG">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@gyurinsight">
+  <meta name="twitter:title" content="글 제목">
+  <meta name="twitter:description" content="글 요약">
+
+  <link rel="canonical" href="https://qrikim.com/posts/YOUR-SLUG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="grain"></div>
+
+  <nav id="nav">
+    <div class="container">
+      <a href="/" class="nav-logo" aria-label="Home">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="54" r="38" fill="#FF5A00"/><ellipse cx="50" cy="54" rx="38" ry="36" fill="#FF5A00"/><ellipse cx="38" cy="44" rx="12" ry="8" fill="#FF7A2E" opacity="0.5" transform="rotate(-15 38 44)"/><path d="M50 16 C48 8, 42 4, 38 2" stroke="#f5f5f5" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M50 16 C52 10, 56 6, 60 5" stroke="#f5f5f5" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/><ellipse cx="50" cy="18" rx="6" ry="4" fill="#FF5A00"/></svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/writing.html">Writing</a></li>
+        <li><a href="/career.html">Career</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="/#writing">Writing</a></li>
+      <li><a href="/#career">Career</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <main class="hero" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="post-page-nav">
+        <a href="/" class="back-link">&larr; Back</a>
+      </div>
+
+      <!-- ✏️ EDIT: 헤더 정보 -->
+      <header class="post-page-header">
+        <div class="post-page-meta">
+          <span class="post-date">YYYY.MM.DD</span>
+          <span class="post-tag">TAG</span>
+        </div>
+        <h1 class="post-page-title">글 제목</h1>
+        <p class="post-page-excerpt">글 요약 (1-2문장)</p>
+      </header>
+
+      <!-- ✏️ EDIT: 본문 작성 -->
+      <article class="post-body">
+
+        <p>첫 번째 문단.</p>
+
+        <h2>소제목</h2>
+
+        <p>본문 텍스트. <strong>강조</strong>는 이렇게.</p>
+
+        <blockquote>
+          <p>"인용문은 이렇게 작성합니다."</p>
+        </blockquote>
+
+        <ul>
+          <li><strong>리스트 항목</strong> — 설명</li>
+          <li><strong>리스트 항목</strong> — 설명</li>
+        </ul>
+
+        <p>마무리 문단.</p>
+
+      </article>
+
+      <!-- ✏️ EDIT: 이전/다음 글 링크 -->
+      <div class="post-footer-nav">
+        <a href="/">&larr; All posts</a>
+        <a href="/posts/NEXT-SLUG.html">Next post &rarr;</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">&copy; 2026 Qri Kim</span>
+        <div class="footer-links">
+          <a href="/">Home</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
