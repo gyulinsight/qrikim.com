@@ -1,19 +1,46 @@
-// Language
+// Language system
+const LANGS = { en: 'English', ko: '한국어', ja: '日本語', zh: '中文' };
 const savedLang = localStorage.getItem('lang') || 'en';
 document.body.classList.add('lang-' + savedLang);
 
-const langBtn = document.getElementById('langToggle');
-if (langBtn) {
-  langBtn.textContent = savedLang === 'en' ? 'KO' : 'EN';
-  langBtn.addEventListener('click', () => {
-    const current = document.body.classList.contains('lang-en') ? 'en' : 'ko';
-    const next = current === 'en' ? 'ko' : 'en';
-    document.body.classList.remove('lang-' + current);
-    document.body.classList.add('lang-' + next);
-    langBtn.textContent = next === 'en' ? 'KO' : 'EN';
-    localStorage.setItem('lang', next);
+// Init all lang selectors on the page
+document.querySelectorAll('.lang-selector').forEach(selector => {
+  const current = selector.querySelector('.lang-current');
+  const dropdown = selector.querySelector('.lang-dropdown');
+
+  // Set initial label
+  current.childNodes[0].textContent = savedLang.toUpperCase() + ' ';
+
+  // Mark active option
+  dropdown.querySelectorAll('.lang-option').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === savedLang);
   });
-}
+
+  // Toggle dropdown
+  current.addEventListener('click', (e) => {
+    e.stopPropagation();
+    selector.classList.toggle('open');
+  });
+
+  // Select language
+  dropdown.querySelectorAll('.lang-option').forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const lang = opt.dataset.lang;
+      Object.keys(LANGS).forEach(l => document.body.classList.remove('lang-' + l));
+      document.body.classList.add('lang-' + lang);
+      localStorage.setItem('lang', lang);
+      current.childNodes[0].textContent = lang.toUpperCase() + ' ';
+      dropdown.querySelectorAll('.lang-option').forEach(o => o.classList.toggle('active', o.dataset.lang === lang));
+      selector.classList.remove('open');
+    });
+  });
+});
+
+// Close dropdown on outside click
+document.addEventListener('click', () => {
+  document.querySelectorAll('.lang-selector').forEach(s => s.classList.remove('open'));
+});
 
 // Scroll progress
 const progress = document.getElementById('scrollProgress');
