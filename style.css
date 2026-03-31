@@ -36,6 +36,29 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
+/* Prevent word/sentence clipping across languages */
+body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+body.lang-en, body.lang-en * {
+  word-break: normal;
+}
+
+body.lang-ja, body.lang-ja * {
+  word-break: normal;
+  line-break: strict;
+}
+
+body.lang-zh, body.lang-zh * {
+  word-break: normal;
+  line-break: strict;
+}
+
 /* Scroll progress */
 .scroll-progress {
   position: fixed;
