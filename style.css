@@ -996,6 +996,39 @@ footer {
   color: var(--orange);
 }
 
+/* ========== Language Switcher ========== */
+.lang-toggle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--gray-500);
+  background: none;
+  border: 1px solid var(--gray-800);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-left: 24px;
+  text-transform: uppercase;
+}
+
+.lang-toggle:hover {
+  border-color: var(--gray-500);
+  color: var(--white);
+}
+
+/* Hide inactive language */
+body.lang-en .ko { display: none !important; }
+body.lang-ko .en { display: none !important; }
+
+@media (max-width: 768px) {
+  .lang-toggle {
+    position: absolute;
+    top: 18px;
+    right: 56px;
+  }
+}
+
 /* ========== Reveal animations ========== */
 .reveal {
   opacity: 0;

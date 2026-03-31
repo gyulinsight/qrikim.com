@@ -1,3 +1,20 @@
+// Language
+const savedLang = localStorage.getItem('lang') || 'en';
+document.body.classList.add('lang-' + savedLang);
+
+const langBtn = document.getElementById('langToggle');
+if (langBtn) {
+  langBtn.textContent = savedLang === 'en' ? 'KO' : 'EN';
+  langBtn.addEventListener('click', () => {
+    const current = document.body.classList.contains('lang-en') ? 'en' : 'ko';
+    const next = current === 'en' ? 'ko' : 'en';
+    document.body.classList.remove('lang-' + current);
+    document.body.classList.add('lang-' + next);
+    langBtn.textContent = next === 'en' ? 'KO' : 'EN';
+    localStorage.setItem('lang', next);
+  });
+}
+
 // Scroll progress
 const progress = document.getElementById('scrollProgress');
 if (progress) {
